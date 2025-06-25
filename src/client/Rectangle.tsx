@@ -1,9 +1,10 @@
 import { Rect } from 'react-konva';
+import { observer } from 'mobx-react';
 import { Store } from './store';
 import { useSocket } from './SocketProvider';
 import type { KonvaEventObject } from 'konva/lib/Node';
 
-export function Rectangle({ rectId }: { rectId: string }) {
+const Rectangle = observer(({ rectId }: { rectId: string }) => {
   const socket = useSocket();
   const { id, x, y, socketId } = Store.get(rectId);
 
@@ -30,4 +31,6 @@ export function Rectangle({ rectId }: { rectId: string }) {
       socketId={socketId}
     />
   );
-}
+});
+
+export { Rectangle };
