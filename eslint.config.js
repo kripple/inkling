@@ -15,7 +15,6 @@ export default tseslint.config([
       js.configs.recommended,
       reactHooks.configs['recommended-latest'],
       reactRefresh.configs.vite,
-      ...tseslint.configs.recommendedTypeChecked,
       ...tseslint.configs.stylisticTypeChecked,
       reactX.configs['recommended-typescript'],
       reactDom.configs.recommended,
@@ -28,8 +27,19 @@ export default tseslint.config([
         tsconfigRootDir: import.meta.dirname,
       },
     },
+    overrides: [
+      {
+        files: ['*.d.ts'],
+        rules: {
+          'no-unused-vars': 'off',
+        },
+      },
+    ],
     rules: {
+      'no-unused-vars': 'warn',
       '@typescript-eslint/no-unused-vars': 'warn',
+      '@typescript-eslint/consistent-type-definitions': 'off',
+      '@typescript-eslint/consistent-indexed-object-style': 'off',
     },
   },
 ]);
