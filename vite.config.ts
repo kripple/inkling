@@ -8,7 +8,5 @@ export default defineConfig({
   build: { outDir: 'docs' },
   clearScreen: false,
   plugins: [react(), tailwindcss()],
-  server: {
-    open: true,
-  },
+  server: { open: true },
 });
