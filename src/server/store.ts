@@ -9,7 +9,7 @@ export const Rectangle = observable({
   },
 
   create(rectangle: Omit<RectangleEntry, 'id'>) {
-    const id = String(this.currentId++);
+    const id = (this.currentId++).toString();
     const draft = { ...rectangle, id };
     this.rectangles[id] = draft;
     return draft;

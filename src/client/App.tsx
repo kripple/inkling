@@ -1,6 +1,6 @@
-import { Stage, Layer, Rect } from 'react-konva';
+import { Stage, Layer } from 'react-konva';
 import { useSocket } from './SocketProvider';
-import { Rectangle } from './store';
+import { Canvas } from './Canvas';
 
 // TODO: apply throttling / rate limiting to the button action
 
@@ -14,10 +14,6 @@ export function App() {
 
   const createNewRectangle = () => {
     socket.emit('rectangle:add', initialPosition);
-  };
-
-  const handleDragMove = () => {
-    console.log('move detected!');
   };
 
   return (
@@ -39,16 +35,7 @@ export function App() {
         height={window.innerHeight - headerHeight}
       >
         <Layer>
-          <Rect
-            onDragMove={handleDragMove}
-            x={16}
-            y={16}
-            width={24}
-            height={24}
-            fill="red"
-            shadowBlur={2}
-            draggable
-          />
+          <Canvas />
         </Layer>
       </Stage>
     </>

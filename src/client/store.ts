@@ -1,22 +1,25 @@
 import { observable } from 'mobx';
-import { socket } from './socket';
 
-export const Rectangle = observable({
+export const Store = observable({
   rectangles: {} as RectangleEntries,
 
   sync(rectangles: RectangleEntries) {
     this.rectangles = rectangles;
   },
 
-  list(): RectangleEntries {
-    return this.rectangles;
-  },
-
-  add(position: Position) {
-    socket.emit('rectangle:add', position);
+  add(rectangle: RectangleEntry) {
+    this.rectangles[rectangle.id] = rectangle;
   },
 
   move(rectangle: RectangleEntry) {
-    socket.emit('rectangle:move', rectangle);
+    this.rectangles[rectangle.id] = rectangle;
+  },
+
+  get(id: string): RectangleEntry {
+    return this.rectangles[id];
+  },
+
+  keys(): string[] {
+    return Object.keys(this.rectangles);
   },
 });

@@ -1,5 +1,4 @@
 declare type ServerEvents = {
-  'ready': () => void;
   'rectangle:add': (rectangle: RectangleEntry) => void;
   'rectangle:move': (rectangle: RectangleEntry) => void;
   'rectangle:init': (rectangles: RectangleEntries) => void;

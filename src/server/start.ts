@@ -15,17 +15,19 @@ const io = new Server<ClientEvents, ServerEvents>(server, {
 });
 
 io.on('connection', (socket) => {
-  socket.emit('ready');
+  console.log(`connection established for client '${socket.id}'`);
 
   // Send current state to newly connected client
   socket.emit('rectangle:init', Rectangle.list());
 
   socket.on('rectangle:add', (data) => {
+    console.log('rectangle:add');
     const rectangle = Rectangle.create({ ...data, socketId: socket.id });
     io.emit('rectangle:add', rectangle); // broadcast to all
   });
 
   socket.on('rectangle:move', (rectangle) => {
+    console.log('rectangle:move');
     Rectangle.update(rectangle);
     socket.broadcast.emit('rectangle:move', rectangle); // broadcast to others only
   });

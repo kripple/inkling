@@ -1,6 +1,7 @@
 import { io } from 'socket.io-client';
 
 // TODO: modify to test our websocket client
+// https://socket.io/docs/v4/load-testing/#manual-client-creation
 
 const URL = process.env.URL ?? 'http://localhost:3000';
 const MAX_CLIENTS = 1000;
