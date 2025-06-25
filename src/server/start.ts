@@ -31,6 +31,12 @@ io.on('connection', (socket) => {
     Rectangle.update(rectangle);
     socket.broadcast.emit('rectangle:move', rectangle); // broadcast to others only
   });
+
+  socket.on('rectangle:reset', () => {
+    console.log('rectangle:reset');
+    Rectangle.reset();
+    io.emit('rectangle:reset'); // broadcast to all
+  });
 });
 
 server.listen(port, () => {

@@ -22,4 +22,8 @@ export const Store = observable({
   keys(): string[] {
     return Object.keys(this.rectangles);
   },
+
+  reset() {
+    this.rectangles = {};
+  },
 });

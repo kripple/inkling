@@ -18,4 +18,8 @@ export const Rectangle = observable({
   update(rectangle: RectangleEntry) {
     this.rectangles[rectangle.id] = rectangle;
   },
+
+  reset() {
+    this.rectangles = {};
+  },
 });
