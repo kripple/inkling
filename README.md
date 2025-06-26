@@ -51,14 +51,16 @@ Backend
 ## Development
 
 ```bash
-npm install  # install dependencies
-npm start    # run the server
-npm run dev  # start the react app
+npm install     # install dependencies
+npm start       # run the server
+npm run dev     # start the react app
+npm run build   # build react app
+npm run preview # preview react app production build
 ```
 
 ## Testing
 
-Add many rectangles - 
+Add many rectangles -
 
 ```TypeScript
 const btn = document.getElementsByTagName('button')[0];
