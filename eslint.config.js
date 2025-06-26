@@ -27,19 +27,12 @@ export default tseslint.config([
         tsconfigRootDir: import.meta.dirname,
       },
     },
-    overrides: [
-      {
-        files: ['*.d.ts'],
-        rules: {
-          'no-unused-vars': 'off',
-        },
-      },
-    ],
     rules: {
-      'no-unused-vars': 'warn',
+      'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': 'warn',
       '@typescript-eslint/consistent-type-definitions': 'off',
       '@typescript-eslint/consistent-indexed-object-style': 'off',
+      'react-x/no-use-context': 'off',
     },
   },
 ]);
