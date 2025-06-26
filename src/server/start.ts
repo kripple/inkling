@@ -6,7 +6,7 @@ const port = 3000 as const;
 const server = createServer();
 const io = new Server<ClientEvents, ServerEvents>(server, {
   cors: {
-    origin: 'http://localhost:5173',
+    origin: ['http://localhost:5173', 'http://localhost:4173'],
     methods: ['GET', 'POST'],
   },
 });
