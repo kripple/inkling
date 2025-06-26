@@ -2,7 +2,7 @@ import { observer } from 'mobx-react';
 import { Store } from './store';
 import { useSocket } from './SocketProvider';
 
-const Button = observer(() => {
+const Buttons = observer(() => {
   const error = Store.getError();
   const socket = useSocket();
   const initialPosition = {
@@ -48,4 +48,4 @@ const Button = observer(() => {
   );
 });
 
-export { Button };
+export { Buttons };

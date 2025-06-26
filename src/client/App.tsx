@@ -1,6 +1,6 @@
 import { Stage, Layer } from 'react-konva';
 import { Canvas } from './Canvas';
-import { Button } from './Button';
+import { Buttons } from './Buttons';
 
 export function App() {
   const headerHeight = 64 as const;
@@ -11,7 +11,7 @@ export function App() {
         style={{ height: `${headerHeight}px` }}
         className="shadow p-1 flex gap-1"
       >
-        <Button />
+        <Buttons />
       </header>
       <Stage
         width={window.innerWidth}
