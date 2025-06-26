@@ -1,9 +1,10 @@
 import { observable } from 'mobx';
+import { max } from '../config';
 
 export const Rectangle = observable({
   rectangles: {} as RectangleEntries,
   currentId: 0,
-  max: 1000 as const,
+  max,
 
   count(): number {
     return Object.keys(this.rectangles).length;

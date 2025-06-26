@@ -1,8 +1,10 @@
 import { observable } from 'mobx';
+import { max } from '../config';
 
 export const Store = observable({
   rectangles: {} as RectangleEntries,
   error: undefined as string | undefined,
+  max,
 
   sync(rectangles: RectangleEntries) {
     this.rectangles = rectangles;

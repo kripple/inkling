@@ -14,15 +14,18 @@
     "@tailwindcss/vite": "^4.1.10",
     "konva": "^9.3.20",
     "mobx-react": "^9.2.0",
+    "randomcolor": "^0.6.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-konva": "^19.0.6",
     "socket.io": "^4.8.1",
     "socket.io-client": "^4.8.1",
-    "tailwindcss": "^4.1.10"
+    "tailwindcss": "^4.1.10",
+    "usehooks-ts": "^3.1.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
+    "@types/randomcolor": "^0.5.9",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.5.2",

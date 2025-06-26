@@ -1,8 +1,10 @@
 import { Stage, Layer } from 'react-konva';
+import { useWindowSize } from 'usehooks-ts';
 import { Canvas } from './Canvas';
 import { Buttons } from './Buttons';
 
 export function App() {
+  const { width = 0, height = 0 } = useWindowSize();
   const headerHeight = 64 as const;
 
   return (
@@ -13,10 +15,7 @@ export function App() {
       >
         <Buttons />
       </header>
-      <Stage
-        width={window.innerWidth}
-        height={window.innerHeight - headerHeight}
-      >
+      <Stage width={width} height={height - headerHeight}>
         <Layer>
           <Canvas />
         </Layer>

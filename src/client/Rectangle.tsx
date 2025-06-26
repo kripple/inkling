@@ -3,6 +3,7 @@ import { observer } from 'mobx-react';
 import { Store } from './store';
 import { useSocket } from './SocketProvider';
 import type { KonvaEventObject } from 'konva/lib/Node';
+import randomColor from 'randomcolor';
 
 const Rectangle = observer(({ rectId }: { rectId: string }) => {
   const socket = useSocket();
@@ -16,6 +17,8 @@ const Rectangle = observer(({ rectId }: { rectId: string }) => {
     socket.emit('rectangle:move', { x, y, id, socketId });
   };
 
+  const color = randomColor({ seed: socketId });
+
   return (
     <Rect
       key={id}
@@ -24,7 +27,7 @@ const Rectangle = observer(({ rectId }: { rectId: string }) => {
       y={y}
       width={24}
       height={24}
-      fill="red"
+      fill={color}
       shadowBlur={2}
       draggable
       rectId={id}
