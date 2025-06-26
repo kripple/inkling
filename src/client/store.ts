@@ -24,6 +24,10 @@ export const Store = observable({
     return Object.keys(this.rectangles);
   },
 
+  count(): number {
+    return this.keys().length;
+  },
+
   reset() {
     this.rectangles = {};
     this.error = undefined;
