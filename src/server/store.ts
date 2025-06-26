@@ -3,6 +3,11 @@ import { observable } from 'mobx';
 export const Rectangle = observable({
   rectangles: {} as RectangleEntries,
   currentId: 0,
+  max: 1000 as const,
+
+  count(): number {
+    return Object.keys(this.rectangles).length;
+  },
 
   list(): RectangleEntries {
     return this.rectangles;

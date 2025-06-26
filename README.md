@@ -50,9 +50,17 @@ Backend
 
 ## Development
 
-Install dependencies and start the development server.
-
 ```bash
-npm install
-npm run dev
+npm install  # install dependencies
+npm start    # run the server
+npm run dev  # start the react app
+```
+
+## Testing
+
+Add many rectangles - 
+
+```TypeScript
+const btn = document.getElementsByTagName('button')[0];
+for (let i = 0; i < 1001; i++) { btn.click() }
 ```

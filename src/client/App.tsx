@@ -1,34 +1,17 @@
 import { Stage, Layer } from 'react-konva';
-import { useSocket } from './SocketProvider';
 import { Canvas } from './Canvas';
-
-// TODO: apply throttling / rate limiting to the button action
+import { Button } from './Button';
 
 export function App() {
   const headerHeight = 64 as const;
-  const socket = useSocket();
-  const initialPosition = {
-    x: 16,
-    y: 16,
-  } as const;
-
-  const createNewRectangle = () => {
-    socket.emit('rectangle:add', initialPosition);
-  };
 
   return (
     <>
       <header
         style={{ height: `${headerHeight}px` }}
-        className="shadow p-1 flex"
+        className="shadow p-1 flex gap-1"
       >
-        <button
-          type="button"
-          onClick={createNewRectangle}
-          className="text-gray-900 bg-white border-2 border-gray-300 hover:bg-gray-100 rounded-sm px-4 py-2 cursor-pointer disabled:cursor-auto transition-colors font-mono font-bold text-base antialiased flex-grow translate-y-0 drop-shadow active:drop-shadow-none active:translate-y-0.5"
-        >
-          Add Rectangle
-        </button>
+        <Button />
       </header>
       <Stage
         width={window.innerWidth}

@@ -19,4 +19,8 @@ socket.on('rectangle:reset', () => {
   Store.reset();
 });
 
+socket.on('rectangle:error', (data) => {
+  Store.setError(data.message);
+});
+
 export { socket };

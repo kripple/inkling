@@ -2,6 +2,7 @@ import { observable } from 'mobx';
 
 export const Store = observable({
   rectangles: {} as RectangleEntries,
+  error: undefined as string | undefined,
 
   sync(rectangles: RectangleEntries) {
     this.rectangles = rectangles;
@@ -25,5 +26,14 @@ export const Store = observable({
 
   reset() {
     this.rectangles = {};
+    this.error = undefined;
+  },
+
+  getError(): string | undefined {
+    return this.error;
+  },
+
+  setError(message: string) {
+    this.error = message;
   },
 });

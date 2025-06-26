@@ -3,6 +3,7 @@ declare type ServerEvents = {
   'rectangle:move': (rectangle: RectangleEntry) => void;
   'rectangle:init': (rectangles: RectangleEntries) => void;
   'rectangle:reset': () => void;
+  'rectangle:error': (error: { message: string }) => void;
 };
 
 declare type ClientEvents = {
